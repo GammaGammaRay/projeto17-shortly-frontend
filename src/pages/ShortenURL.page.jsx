@@ -1,9 +1,14 @@
 import React from 'react'
+import { ContentContainer } from "../style/PageContainer.jsx"
+
+
 
 function ShortenURL() {
   return (
-    <div>ShortenURL</div>
-  )
+    <ContentContainer>
+      <ShortlyLogo />
+    </ContentContainer>
+)
 }
 
 export default ShortenURL
