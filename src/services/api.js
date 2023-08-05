@@ -11,7 +11,7 @@ function tokenProvider(auth) {
 }
 
 // --------- USER ---------
-function login(data, success, failure) {
+function signIn(data, success, failure) {
   axios
     .post("/login")
     .then((res) => {
@@ -25,7 +25,7 @@ function login(data, success, failure) {
 
 function signUp(data, success, failure) {
   axios
-    .post("/SignUp")
+    .post("/signup")
     .then((res) => {
       success(res.data)
     })
@@ -37,7 +37,7 @@ function signUp(data, success, failure) {
 
 function signOut(data, success) {
   axios
-    .post("/SignOut", data)
+    .post("/Signout", data)
     .then((res) => {
       success(res.data)
     })
@@ -47,15 +47,16 @@ function signOut(data, success) {
 }
 
 // --------- URLS ---------
-function getUserURLS(data, success) {
+function getUserURLS(auth, success) {
+  console.log(auth);
   axios
-    .post("/getUserURLS", data)
+    .get("/users/me", tokenProvider(auth))
     .then((res) => {
-      success(res.data)
+      success(res.data);
     })
     .catch((err) => {
-      alert(err.response.data)
-    })
+      alert(err.response.data);
+    });
 }
 
 function shortenURL(data, success) {
@@ -70,3 +71,16 @@ function shortenURL(data, success) {
 }
 
 // --------- RANKING ---------
+function getRanking(auth, success) {
+  console.log(auth);
+  axios
+    .get("/users/me", tokenProvider(auth))
+    .then((res) => {
+      success(res.data);
+    })
+    .catch((err) => {
+      alert(err.response.data);
+    });
+}
+
+export {signIn, signOut, signUp, shortenURL, getUserURLS, getRanking}

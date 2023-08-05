@@ -1,8 +1,8 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
     * {
-        font-family: 'Raleway';
+        font-family: "Lexend Deca";
         font-style: normal;
         font-weight: 400;
     }
@@ -10,9 +10,8 @@ const GlobalStyle = createGlobalStyle`
         outline: none;
         border: none;
         border-radius: 5px;
-        background-color: #a328d6;
+        background-color: rgb(120, 177, 89);
         font-size: 20px;
-        font-weight: 600;
         color: #fff;
         cursor: pointer;
         width: 100%;

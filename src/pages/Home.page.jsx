@@ -1,17 +1,18 @@
 import React from "react"
 import Ranking from "../components/Ranking.component"
 import { styled } from "styled-components"
+import ShortlyLogo from "../components/ShortlyLogo.component.jsx"
+import { ContentContainer } from "../style/PageContainer"
 
 function Home() {
   return (
-    <HomePageContainer>
-      Shortly
-    </HomePageContainer>
+      <ContentContainer>
+        <ShortlyLogo />
+        <Ranking/>
+      </ContentContainer>
   )
 }
 
-const HomePageContainer = styled.div`
-  
-`
+
 
 export default Home
